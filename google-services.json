@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "689594893452",
+    "project_id": "smart-pet-door",
+    "storage_bucket": "smart-pet-door.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689594893452:android:7d4e479de70e23228027a9",
+        "android_client_info": {
+          "package_name": "com.example.testapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVLe1a2fy8Dz6IUeOSs29Qe7-I72T-hIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
