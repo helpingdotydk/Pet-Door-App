@@ -46,7 +46,7 @@ public class SettingsViewActivity extends AppCompatActivity {
         addTagButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendHTTPRequest("add_tag", "");
+                setAddTagTrue();
             }
         });
 
@@ -90,5 +90,40 @@ public class SettingsViewActivity extends AppCompatActivity {
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
         return textView.getText().toString();
+    }
+
+
+    public void setAddTagTrue(){
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+//        String output = "not set yet";
+
+        //this URL only works at my (nicks) apartemnt/laptop
+
+        String url = "http://192.168.19.205:8080/add_tag";
+
+        TextView textView = (TextView) findViewById(R.id.devTextView);
+
+        textView.setText("not set yet");
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        textView.setText(response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                textView.setText("That didn't work!");
+                Log.i("NicksAppFixer", "error: "+error);
+
+            }
+        });
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
     }
 }
