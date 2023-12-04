@@ -66,9 +66,9 @@ public class SettingsViewActivity extends AppCompatActivity {
 
         String url = "http://192.168.19.205:8080/"+method+"/"+input;
 
-        TextView textView = (TextView) findViewById(R.id.devTextView);
-
-        textView.setText("not set yet");
+//        TextView textView = (TextView) findViewById(R.id.devTextView);
+//
+//        textView.setText("not set yet");
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -76,12 +76,12 @@ public class SettingsViewActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
-                        textView.setText(response);
+//                        textView.setText(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                textView.setText("That didn't work!");
+//                textView.setText("That didn't work!");
                 Log.i("NicksAppFixer", "error: "+error);
 
             }
@@ -89,7 +89,8 @@ public class SettingsViewActivity extends AppCompatActivity {
 
         // Add the request to the RequestQueue.
         queue.add(stringRequest);
-        return textView.getText().toString();
+//        return textView.getText().toString();
+        return "";
     }
 
 
@@ -102,9 +103,9 @@ public class SettingsViewActivity extends AppCompatActivity {
 
         String url = "http://192.168.19.205:8080/add_tag";
 
-        TextView textView = (TextView) findViewById(R.id.devTextView);
-
-        textView.setText("not set yet");
+//        TextView textView = (TextView) findViewById(R.id.devTextView);
+//
+//        textView.setText("not set yet");
 
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -112,12 +113,12 @@ public class SettingsViewActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
-                        textView.setText(response);
+//                        textView.setText(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                textView.setText("That didn't work!");
+//                textView.setText("That didn't work!");
                 Log.i("NicksAppFixer", "error: "+error);
 
             }
